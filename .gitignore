@@ -29,3 +29,6 @@ drafts/
 
 # AI 工具本地配置
 .claude/
+
+# 临时草稿目录
+temp/
