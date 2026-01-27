@@ -26,3 +26,6 @@ node_modules/
 
 # 草稿文件夹
 drafts/
+
+# AI 工具本地配置
+.claude/
