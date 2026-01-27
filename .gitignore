@@ -1,0 +1,28 @@
+# 操作系统文件
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# 编辑器和 IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+
+# 敏感信息 (如果有)
+*.secret
+.env
+.env.local
+
+# 编译产物
+*.log
+node_modules/
+
+# 草稿文件夹
+drafts/
