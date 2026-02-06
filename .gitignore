@@ -47,3 +47,8 @@ _legacy_archive/
 *.blg
 *.bcf
 *.run.xml
+
+# 规划文件 (仅本地保留)
+task_plan.md
+findings.md
+progress.md

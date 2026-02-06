@@ -1,0 +1,31 @@
+%----------RESUME MAIN FILE----------
+% Compiler: pdfLaTeX (Overleaf compatible)
+% Based on: Jake's Resume (MIT License)
+% Architecture: Three-Tier Data Flow Resume System
+
+\documentclass{resume-commands}
+
+\begin{document}
+
+%----------LAYER 1: HEADER----------
+\input{sections/header}
+
+%----------LAYER 2: EDUCATION----------
+\input{sections/education}
+
+%----------LAYER 3: SKILLS----------
+\input{sections/skills}
+
+%----------LAYER 4: PROJECTS----------
+\input{sections/projects}
+
+%----------LAYER 5: EXPERIENCE----------
+\input{sections/experience}
+
+%----------LAYER 6A: PUBLICATIONS----------
+\input{sections/publications}
+
+%----------LAYER 6B: AWARDS----------
+\input{sections/awards}
+
+\end{document}
