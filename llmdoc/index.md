@@ -1,16 +1,17 @@
 # my-resume Documentation Index
 
-> **Last Updated**: 2026-01-27 | **Version**: 1.1
-> **Project**: A Git-based version control system for personal resume management
-> **Editor**: [Reactive Resume](https://rxresu.me/) (JSON Schema v5.0.0)
+> **Last Updated**: 2026-02-06 | **Version**: 2.0
+> **Project**: Three-Tier Data Flow Resume System (Raw -> Schema -> LaTeX View)
+> **Architecture**: master-data/ -> content/ -> templates/ -> PDF
 
 ---
 
 ## Quick Start
 
 1. Read [Project Overview](overview/project-overview.md) to understand the system
-2. Follow [Edit and Update Resume](guides/edit-and-update-resume.md) for the core workflow
-3. Reference [Git Conventions](reference/git-conventions.md) for commit standards
+2. Read [Workflows Overview](overview/workflows-overview.md) for the three-phase pipeline
+3. Follow [Add Raw Material](guides/add-raw-material.md) to start contributing content
+4. Reference [Design Principles](reference/design-principles.md) for non-negotiable rules
 
 ---
 
@@ -20,35 +21,31 @@ High-level project context and philosophy.
 
 | Document | Description |
 |----------|-------------|
-| [Project Overview](overview/project-overview.md) | Project identity, purpose, and integration with Reactive Resume |
-| [Workflows Overview](overview/workflows-overview.md) | "Edit-export-version control" pattern philosophy |
-| [Resume Data Format Overview](overview/resume-data-format-overview.md) | Reactive Resume JSON Schema v5.0.0 explanation |
-| [Versioning Overview](overview/versioning-overview.md) | Three-tier version management (data/pdf/archive) |
+| [Project Overview](overview/project-overview.md) | Project identity: three-tier data flow pipeline for resume management |
+| [Workflows Overview](overview/workflows-overview.md) | Three-phase workflow: Divergence -> Convergence -> Build |
 
 ---
 
 ## Architecture
 
-System design and LLM retrieval maps for understanding how components interact.
+System design and LLM retrieval maps.
 
 | Document | Description |
 |----------|-------------|
-| [Resume JSON Schema](architecture/resume-json-schema.md) | Schema structure, field relationships, and data flow |
-| [Versioning Architecture](architecture/versioning-architecture.md) | Three-tier system: data layer, distribution layer, archive layer |
-| [Variant Management](architecture/variant-management.md) | Naming-convention-based variant strategy (general/English/custom) |
+| [Three-Tier Data Flow](architecture/three-tier-data-flow.md) | Core architecture: master-data/ (Tier 1) -> content/ (Tier 2) -> templates/ (Tier 3) |
+| [Content Schema](architecture/content-schema.md) | Tier 2 schema specification: field definitions, XYZ format, ATS optimization |
 
 ---
 
 ## Guides
 
-Step-by-step operational instructions for common tasks.
+Step-by-step operational instructions.
 
 | Document | Description |
 |----------|-------------|
-| [Working with Resume JSON](guides/working-with-resume-json.md) | Export, validate, import JSON from Reactive Resume |
-| [Edit and Update Resume](guides/edit-and-update-resume.md) | Core workflow: edit online, export JSON/PDF, commit |
-| [Archive Resume Version](guides/archive-resume-version.md) | Create timestamped snapshots in `versions/` |
-| [Manage Resume Variants](guides/manage-resume-variants.md) | Create and maintain multiple resume versions |
+| [Add Raw Material](guides/add-raw-material.md) | Phase 1: Record free-form career materials into master-data/ |
+| [Compress to Schema](guides/compress-to-schema.md) | Phase 2: AI Copilot transforms raw materials into structured content/ |
+| [Build LaTeX PDF](guides/build-latex-pdf.md) | Phase 3: Inject content into LaTeX templates and compile PDF |
 
 ---
 
@@ -58,10 +55,9 @@ Factual lookup information and specifications.
 
 | Document | Description |
 |----------|-------------|
-| [Git Conventions](reference/git-conventions.md) | Branch strategy, commit format (`feat:` prefix), privacy guidelines |
-| [Coding Conventions](reference/coding-conventions.md) | File naming, directory structure, data format standards |
-| [Workflow Commands](reference/workflow-commands.md) | Quick command reference for common operations |
-| [Resume Schema Reference](reference/resume-schema-reference.md) | Complete field reference for JSON Schema v5.0.0 |
+| [Design Principles](reference/design-principles.md) | Five core principles: kebab-case, no fluff, evidence-based, ATS-optimized, privacy-first |
+| [Coding Conventions](reference/coding-conventions.md) | Naming rules, directory structure, content format standards |
+| [Git Conventions](reference/git-conventions.md) | Branch strategy, commit format, privacy considerations |
 
 ---
 
@@ -69,27 +65,25 @@ Factual lookup information and specifications.
 
 ```
 my-resume/
-├── data/          # JSON source files (Git tracked)
-├── pdf/           # Current PDF versions for distribution
-├── versions/      # Historical archives with timestamps
-├── docs/          # Optional GitHub Pages static site
-├── assets/        # Static resources (images, CSS)
-├── llmdoc/        # This documentation system
-│   ├── index.md   # Documentation index
-│   ├── overview/  # High-level project context (4 documents)
-│   ├── guides/    # Step-by-step operational instructions (4 documents)
-│   ├── architecture/  # System design and LLM retrieval maps (3 documents)
-│   └── reference/ # Factual lookup information (4 documents)
-├── README.md      # Project readme
-├── LICENSE        # MIT License
-└── .gitignore     # Git ignore rules
+├── master-data/          # [Tier 1] Raw Data Lake - free-form career materials
+│   ├── education-master.md
+│   ├── projects-master.md
+│   └── experience-master.md
+├── content/              # [Tier 2] Schema Layer - structured resume content
+│   ├── basics/           # profile.md, skills.md
+│   ├── education/        # university.md
+│   ├── projects/         # per-project entries
+│   ├── experience/       # per-entry files
+│   ├── publications/     # per-entry files
+│   └── awards/           # per-entry files
+├── templates/            # [Tier 3] View Layer - LaTeX templates
+├── llmdoc/               # This documentation system
+│   ├── index.md          # Documentation index (this file)
+│   ├── overview/         # High-level project context (2 documents)
+│   ├── architecture/     # System design and retrieval maps (2 documents)
+│   ├── guides/           # Step-by-step instructions (3 documents)
+│   └── reference/        # Factual lookup information (3 documents)
+├── README.md             # Project readme
+├── LICENSE               # MIT License
+└── .gitignore            # Git ignore rules
 ```
-
----
-
-## External Resources
-
-- [Reactive Resume](https://rxresu.me/) - Online resume editor
-- [JSON Schema v5.0.0](https://rxresu.me/schema.json) - Official schema definition
-- [Schema Documentation](https://docs.rxresu.me/guides/json-resume-schema) - Complete field specifications
-- [Export Guide](https://docs.rxresu.me/guides/exporting-your-resume) - JSON/PDF export instructions

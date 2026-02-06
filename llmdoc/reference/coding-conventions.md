@@ -4,37 +4,40 @@ This document summarizes the key conventions used in the my-resume project.
 
 ## 1. Core Summary
 
-The my-resume project follows a "source-control-first" architecture where JSON data files are the source of truth, PDFs are distribution artifacts, and Git provides version control. The project uses Reactive Resume v5.0.0 JSON Schema as the data format standard.
+The my-resume project follows a three-tier data flow architecture (Raw -> Schema -> LaTeX View). All files and directories use strict kebab-case naming. Content follows ATS-optimized formatting with XYZ (Action-Context-Result) bullet structure. The project enforces evidence-based claims and privacy-first principles.
 
 ## 2. Source of Truth
 
-### File Naming Conventions
-- **Primary Data**: `.gitignore` - Defines exclusions for OS files, editor configs, and drafts folder
-- **README Structure**: `README.md:8-24` - Directory structure documentation
-- **PDF Naming**: `README.md:45-50` - Three patterns: `姓名_岗位_年份.pdf`, `姓名_英文版.pdf`, `姓名_某公司定制版.pdf`
+- **Primary Code**: `README.md` - Project architecture and naming convention
+- **Directory Structure**: `README.md:9-26` - Three-tier directory layout
+- **Naming Convention**: `README.md:47-49` - Kebab-case enforcement
+- **Related Architecture**: `/llmdoc/architecture/three-tier-data-flow.md` - Full tier specification
+- **Related Architecture**: `/llmdoc/architecture/content-schema.md` - Schema layer conventions
 
-### Directory Structure
-- **Primary Code**: `README.md:9-24` - Defines six top-level directories
-- **data/** - Source JSON files from Reactive Resume (`resume.json`)
-- **pdf/** - Distribution-ready PDF resumes
-- **versions/** - Historical archives
-- **docs/** - Optional GitHub Pages static site
-- **assets/** - Static resources (images, CSS)
-- **llmdoc/** - AI agent documentation system
+## 3. Naming Conventions
 
-### Data Format Standards
-- **Primary Code**: `README.md:28-33` - Reactive Resume export workflow
-- **Schema Version**: v5.0.0 (Reactive Resume JSON Schema)
-- **Schema URL**: https://rxresu.me/schema.json
-- **External Docs**: https://docs.rxresu.me/guides/json-resume-schema - Complete field specifications
-- **Related Architecture**: `/llmdoc/agent/scout-data-format.md` - Detailed schema structure
+- **All files and directories**: Strict kebab-case (e.g., `education-master.md`, `mr-cooking.md`)
+- **Master data files**: `{category}-master.md` pattern (e.g., `projects-master.md`)
+- **Content files**: Descriptive kebab-case within category subdirectories (e.g., `content/education/university.md`)
 
-### Git Conventions
-- **Commit Format**: Conventional commits with `feat:` prefix (`README.md:38-42`)
-- **Branch Naming**: Uses `master` (README inconsistency with `main` reference)
-- **Privacy**: Repository should be private (`README.md:74-77`)
+## 4. Directory Structure
 
-### Documentation Standards
-- **README Sections**: Structure, Usage, Version Control, Naming, Versions, Links, Changelog
+```
+master-data/    # [Tier 1] Raw Data Lake
+content/        # [Tier 2] Schema Layer
+  basics/       #   profile.md, skills.md
+  education/    #   university.md, ...
+  projects/     #   per-project files
+  experience/   #   per-entry files
+  publications/ #   per-entry files
+  awards/       #   per-entry files
+templates/      # [Tier 3] View Layer (LaTeX)
+llmdoc/         # Documentation system
+```
+
+## 5. Content Format Standards
+
+- **Bullet format**: XYZ (Action-Context-Result) for experience, projects, publications
+- **Skills format**: `* **Category:** **Skill** (Detail), Skill`
+- **Schema declaration**: HTML comments at top of each `content/` file
 - **Language**: Chinese with English technical terms
-- **Version Tracking**: Table format with columns for version, purpose, last update

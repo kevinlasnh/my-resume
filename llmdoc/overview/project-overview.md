@@ -2,9 +2,9 @@
 
 ## 1. Identity
 
-- **What it is:** A Git-based version control system for personal resume management.
-- **Purpose:** Track resume changes over time, manage multiple variants (general, English, company-customized), and maintain a single source of truth using JSON format.
+- **What it is:** A three-tier data flow pipeline for personal resume management (Raw -> Schema -> LaTeX View).
+- **Purpose:** Separate raw material collection from structured content authoring and final PDF generation, enabling AI-assisted resume building with full Git version control.
 
 ## 2. High-Level Description
 
-This project integrates Reactive Resume (https://rxresu.me/) as the online editor with local Git version control. The workflow follows an "edit-export-version control" pattern: users edit resumes in Reactive Resume, export JSON to `data/resume.json` for version control, and export PDF to `pdf/` for distribution. Historical versions are archived in `versions/`. The project uses JSON Schema v5.0.0 for resume data structure and follows conventional commit practices (`feat:` prefix).
+This project implements a three-tier architecture for resume lifecycle management. Tier 1 (`master-data/`) serves as a raw data lake where the user freely records career materials without format constraints. Tier 2 (`content/`) is the schema layer where AI Copilot compresses raw materials into structured, ATS-optimized content following the XYZ (Action-Context-Result) format. Tier 3 (`templates/`) holds LaTeX templates that consume Tier 2 content to produce PDF output via Overleaf or local compilation. The workflow follows three phases: Divergence (free-form capture), Convergence (AI-assisted compression), and Build (LaTeX compilation). All files use strict kebab-case naming. The project prioritizes technical depth over fluff, evidence-based claims, and privacy-first principles.
