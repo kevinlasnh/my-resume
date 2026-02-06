@@ -32,3 +32,18 @@ drafts/
 
 # 临时草稿目录
 temp/
+
+# 旧版归档 (仅本地保留)
+_legacy_archive/
+
+# LaTeX 编译产物
+*.aux
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.toc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
