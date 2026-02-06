@@ -1,4 +1,13 @@
 # Experience Master Data
 
-<!-- Tier 1: 原始素材 - 自由记录所有工作/实习经历 -->
-<!-- 包括：日常任务、使用工具、具体成果、工作细节等 -->
+## Intellindust
+
+- **Period:** Jun 2023 - Jul 2023
+- **Position:** Software Engineer Intern
+- **Location:** Shenzhen, China
+- **Company URL:** https://www.intellindust.com/
+
+### Raw Notes:
+- Learned and understood the complete workflow of deep learning algorithms
+- Performed data annotation on target image datasets using LabelImg
+- Maintained and managed the company's image database

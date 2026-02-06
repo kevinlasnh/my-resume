@@ -1,4 +1,8 @@
 # University
 
-<!-- Tier 2: 结构化内容 - 严格遵循 resume-architecture-spec.md Layer 2 -->
-<!-- 字段: institution, degree, start_date, end_date, gpa, courses -->
+institution: "Xi'an Jiaotong-Liverpool University"
+degree: "B.Eng. in Computer Science and Technology"
+start_date: "Sep 2022"
+end_date: "Expected Jun 2026"
+gpa: "3.9 / 4.0 (Top 5% in department)"
+courses: TODO
