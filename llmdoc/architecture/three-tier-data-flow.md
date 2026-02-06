@@ -19,7 +19,16 @@
   - `content/experience/`: Individual work experience entries with XYZ bullet format.
   - `content/publications/`: Publication entries with required links.
   - `content/awards/`: Award entries.
-- `templates/` (Tier 3 - View Layer): LaTeX templates that consume Tier 2 content to generate PDF.
+- `templates/` (Tier 3 - View Layer): LaTeX presentation layer based on Jake's Resume (MIT License).
+  - `templates/resume-commands.cls` (`\resumeSubheading`, `\resumeExperienceHeading`, `\resumeProjectHeading`, `\resumePublication`, `\resumeAward`): Custom LaTeX class. Roboto font, ATS optimization (`\pdfgentounicode=1`), single-column layout, section heading commands.
+  - `templates/resume.tex`: Main entry file. Uses `\documentclass{resume-commands}` and modular `\input{sections/*}` to assemble 7 layers.
+  - `templates/sections/header.tex`: Layer 1 - Name, contact info, links.
+  - `templates/sections/education.tex`: Layer 2 - Uses `\resumeSubheading` (4 args: Institution, Location, Degree, Dates).
+  - `templates/sections/skills.tex`: Layer 3 - Categorized technical keywords.
+  - `templates/sections/projects.tex`: Layer 4 - Uses `\resumeProjectHeading` (4 args: Name|TechStack, Dates, URL, Role--Type).
+  - `templates/sections/experience.tex`: Layer 5 - Uses `\resumeExperienceHeading` (5 args: Company, Dates, Position, Location, CompanyDesc).
+  - `templates/sections/publications.tex`: Layer 6A - Uses `\resumePublication` (6 args: Title, Authors, Venue, Status, Date, URL).
+  - `templates/sections/awards.tex`: Layer 6B - Uses `\resumeAward` (3 args: Title, Issuer, Date).
 
 ## 3. Execution Flow (LLM Retrieval Map)
 

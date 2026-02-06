@@ -76,7 +76,17 @@ my-resume/
 │   ├── experience/       # per-entry files
 │   ├── publications/     # per-entry files
 │   └── awards/           # per-entry files
-├── templates/            # [Tier 3] View Layer - LaTeX templates
+├── templates/            # [Tier 3] View Layer - LaTeX (Jake's Resume + Roboto)
+│   ├── resume-commands.cls  # Custom class: heading commands, ATS config, Roboto font
+│   ├── resume.tex           # Main file: modular \input{sections/*} structure
+│   └── sections/            # 7 section templates (Layer 1-6B)
+│       ├── header.tex       #   Layer 1: name, contact, links
+│       ├── education.tex    #   Layer 2: \resumeSubheading
+│       ├── skills.tex       #   Layer 3: categorized keywords
+│       ├── projects.tex     #   Layer 4: \resumeProjectHeading
+│       ├── experience.tex   #   Layer 5: \resumeExperienceHeading
+│       ├── publications.tex #   Layer 6A: \resumePublication
+│       └── awards.tex       #   Layer 6B: \resumeAward
 ├── llmdoc/               # This documentation system
 │   ├── index.md          # Documentation index (this file)
 │   ├── overview/         # High-level project context (2 documents)
