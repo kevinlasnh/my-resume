@@ -8,7 +8,7 @@ The project uses conventional commits with `feat:` prefix for content changes an
 
 ## 2. Source of Truth
 
-- **Primary Code**: `README.md` - Project workflow and structure
+- **Primary Code**: `CLAUDE.md` - Repository identity, workflow, and modification rules
 - **Git Ignore Rules**: `.gitignore` - Exclusions for OS files, editor configs, drafts, legacy archive, LaTeX build artifacts
 - **Related Architecture**: `/llmdoc/architecture/three-tier-data-flow.md` - Directory structure context
 

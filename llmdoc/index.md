@@ -1,6 +1,6 @@
 # my-resume Documentation Index
 
-> **Last Updated**: 2026-02-06 | **Version**: 2.0
+> **Last Updated**: 2026-02-07 | **Version**: 2.1
 > **Project**: Three-Tier Data Flow Resume System (Raw -> Schema -> LaTeX View)
 > **Architecture**: master-data/ -> content/ -> templates/ -> PDF
 
@@ -65,17 +65,21 @@ Factual lookup information and specifications.
 
 ```
 my-resume/
-├── master-data/          # [Tier 1] Raw Data Lake - free-form career materials
-│   ├── education-master.md
-│   ├── projects-master.md
-│   └── experience-master.md
-├── content/              # [Tier 2] Schema Layer - structured resume content
-│   ├── basics/           # profile.md, skills.md
-│   ├── education/        # university.md
-│   ├── projects/         # per-project entries
-│   ├── experience/       # per-entry files
-│   ├── publications/     # per-entry files
-│   └── awards/           # per-entry files
+├── master-data/          # [Tier 1] Raw Data Lake - six subdirectories mirroring content categories
+│   ├── basics/
+│   ├── education/        # education-master.md
+│   ├── projects/         # projects-master.md
+│   ├── experience/       # experience-master.md
+│   ├── publications/
+│   └── awards/
+├── content/              # [Tier 2] Schema Layer - flat, 7 structured markdown files
+│   ├── profile.md        #   Layer 1: name, contact, links
+│   ├── education.md      #   Layer 2: education entries
+│   ├── skills.md         #   Layer 3: categorized keywords
+│   ├── projects.md       #   Layer 4: all project entries (merged)
+│   ├── experience.md     #   Layer 5: all experience entries (merged)
+│   ├── publications.md   #   Layer 6A: all publication entries (merged)
+│   └── awards.md         #   Layer 6B: all award entries (merged)
 ├── templates/            # [Tier 3] View Layer - LaTeX (Jake's Resume + Roboto)
 │   ├── resume-commands.cls  # Custom class: heading commands, ATS config, Roboto font
 │   ├── resume.tex           # Main file: modular \input{sections/*} structure
@@ -93,6 +97,7 @@ my-resume/
 │   ├── architecture/     # System design and retrieval maps (2 documents)
 │   ├── guides/           # Step-by-step instructions (3 documents)
 │   └── reference/        # Factual lookup information (3 documents)
+├── CLAUDE.md             # Repository identity, rules, and session triggers
 ├── README.md             # Project readme
 ├── LICENSE               # MIT License
 └── .gitignore            # Git ignore rules

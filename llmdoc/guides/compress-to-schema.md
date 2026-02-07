@@ -2,9 +2,9 @@
 
 A guide for AI Copilot to transform Tier 1 raw materials into Tier 2 structured content.
 
-1. **Read Raw Materials:** Open the relevant `master-data/*.md` file(s) to understand the full scope of available content. Cross-reference multiple master files if the entry spans categories.
+1. **Read Raw Materials:** Open the relevant `master-data/{category}/*.md` file(s) to understand the full scope of available content. Cross-reference multiple master files if the entry spans categories.
 
-2. **Identify Target Schema:** Determine the correct `content/` subdirectory and check the HTML comment header for field requirements (e.g., `content/education/university.md:1-4`). Reference `/llmdoc/architecture/content-schema.md` for the full schema map.
+2. **Identify Target Schema:** Determine the correct `content/*.md` file (flat structure, 7 files total) and check the HTML comment header for field requirements. Reference `/llmdoc/architecture/content-schema.md` for the full schema map.
 
 3. **Apply XYZ Format:** For experience, projects, and publications entries, compress each bullet point into Action-Context-Result format. Strip filler words and maximize technical specificity.
 

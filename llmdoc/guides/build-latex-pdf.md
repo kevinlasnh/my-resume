@@ -7,13 +7,13 @@ A guide for injecting structured content into LaTeX templates and compiling to P
 2. **Understand Template Structure:** The template uses a modular `\input{}` architecture. `templates/resume.tex` is the main entry file that assembles 7 section files via `\input{sections/header}`, `\input{sections/education}`, etc. Custom heading commands are defined in `templates/resume-commands.cls`.
 
 3. **Inject Content into Section Files:** Map `content/` fields into the corresponding `templates/sections/*.tex` files using the custom commands from `resume-commands.cls`:
-   - `content/basics/profile.md` -> `sections/header.tex` (Layer 1: plain text)
-   - `content/education/` -> `sections/education.tex` (Layer 2: `\resumeSubheading` 4 args)
-   - `content/basics/skills.md` -> `sections/skills.tex` (Layer 3: categorized keywords)
-   - `content/projects/` -> `sections/projects.tex` (Layer 4: `\resumeProjectHeading` 4 args)
-   - `content/experience/` -> `sections/experience.tex` (Layer 5: `\resumeExperienceHeading` 5 args)
-   - `content/publications/` -> `sections/publications.tex` (Layer 6A: `\resumePublication` 6 args)
-   - `content/awards/` -> `sections/awards.tex` (Layer 6B: `\resumeAward` 3 args)
+   - `content/profile.md` -> `sections/header.tex` (Layer 1: plain text)
+   - `content/education.md` -> `sections/education.tex` (Layer 2: `\resumeSubheading` 4 args)
+   - `content/skills.md` -> `sections/skills.tex` (Layer 3: categorized keywords)
+   - `content/projects.md` -> `sections/projects.tex` (Layer 4: `\resumeProjectHeading` 4 args)
+   - `content/experience.md` -> `sections/experience.tex` (Layer 5: `\resumeExperienceHeading` 5 args)
+   - `content/publications.md` -> `sections/publications.tex` (Layer 6A: `\resumePublication` 6 args)
+   - `content/awards.md` -> `sections/awards.tex` (Layer 6B: `\resumeAward` 3 args)
 
 4. **Compile via Overleaf:** Upload the entire `templates/` directory to Overleaf. Set compiler to **pdfLaTeX**. The project has no local LaTeX compiler; Overleaf is the primary build environment.
 

@@ -8,7 +8,8 @@ The project enforces five non-negotiable design principles: strict kebab-case na
 
 ## 2. Source of Truth
 
-- **Primary Code**: `README.md:47-49` - Naming convention enforcement
+- **Primary Code**: `CLAUDE.md:72-78` - Five design principles definition
+- **Spec Source of Truth**: `CLAUDE.md:82-88` - Repository is the single source of truth; external G-drive files are mirrors only
 - **Content Schema**: `/llmdoc/architecture/content-schema.md` - How principles map to schema fields
 - **Related Architecture**: `/llmdoc/architecture/three-tier-data-flow.md` - Tier structure context
 
@@ -19,7 +20,7 @@ The project enforces five non-negotiable design principles: strict kebab-case na
 | **Kebab-Case** | All files and directories use kebab-case | All tiers |
 | **No Fluff** | No Summary section; maximize technical depth | Tier 2 (content/) |
 | **Evidence-Based** | Projects must have URL; publications must have link | Tier 2 (content/) |
-| **ATS-Optimized** | Skills explicitly grouped by category with keywords | Tier 2 (content/basics/skills.md) |
+| **ATS-Optimized** | Skills explicitly grouped by category with keywords | Tier 2 (content/skills.md) |
 | **Privacy-First** | No photos, no full addresses, no sensitive PII | All tiers |
 
 ## 4. Role Assignments

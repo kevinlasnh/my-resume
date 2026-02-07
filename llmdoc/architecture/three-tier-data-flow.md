@@ -7,18 +7,21 @@
 
 ## 2. Core Components
 
-- `master-data/` (Tier 1 - Raw Data Lake): Free-form markdown files for recording career materials without format constraints.
-  - `master-data/education-master.md`: Raw education materials (courses, grades, activities, scholarships).
-  - `master-data/projects-master.md`: Raw project materials (READMEs, dev logs, tech stack details).
-  - `master-data/experience-master.md`: Raw work/internship materials (daily tasks, tools, outcomes).
-- `content/` (Tier 2 - Schema Layer): Structured resume content strictly following schema specification.
-  - `content/basics/profile.md`: Name, role, email, phone, location, links.
-  - `content/basics/skills.md`: Categorized skills with ATS keyword grouping.
-  - `content/education/university.md`: Structured education entries (institution, degree, dates, GPA, courses).
-  - `content/projects/`: Individual project entries with XYZ bullet format.
-  - `content/experience/`: Individual work experience entries with XYZ bullet format.
-  - `content/publications/`: Publication entries with required links.
-  - `content/awards/`: Award entries.
+- `master-data/` (Tier 1 - Raw Data Lake): Six subdirectories mirroring content categories, free-form markdown without format constraints.
+  - `master-data/basics/`: Raw profile/skills materials.
+  - `master-data/education/education-master.md`: Raw education materials (courses, grades, activities, scholarships).
+  - `master-data/projects/projects-master.md`: Raw project materials (READMEs, dev logs, tech stack details).
+  - `master-data/experience/experience-master.md`: Raw work/internship materials (daily tasks, tools, outcomes).
+  - `master-data/publications/`: Raw publication materials.
+  - `master-data/awards/`: Raw award materials.
+- `content/` (Tier 2 - Schema Layer): Flat directory with 7 markdown files, structured resume content strictly following schema specification.
+  - `content/profile.md`: Name, role, email, phone, location, links.
+  - `content/skills.md`: Categorized skills with ATS keyword grouping.
+  - `content/education.md`: Structured education entries (institution, degree, dates, GPA, courses).
+  - `content/projects.md`: All project entries with XYZ bullet format (merged single file).
+  - `content/experience.md`: All work experience entries with XYZ bullet format (merged single file).
+  - `content/publications.md`: All publication entries with required links (merged single file).
+  - `content/awards.md`: All award entries (merged single file).
 - `templates/` (Tier 3 - View Layer): LaTeX presentation layer based on Jake's Resume (MIT License).
   - `templates/resume-commands.cls` (`\resumeSubheading`, `\resumeExperienceHeading`, `\resumeProjectHeading`, `\resumePublication`, `\resumeAward`): Custom LaTeX class. Roboto font, ATS optimization (`\pdfgentounicode=1`), single-column layout, section heading commands.
   - `templates/resume.tex`: Main entry file. Uses `\documentclass{resume-commands}` and modular `\input{sections/*}` to assemble 7 layers.
@@ -32,8 +35,8 @@
 
 ## 3. Execution Flow (LLM Retrieval Map)
 
-- **1. Raw Input (Tier 1):** User writes free-form materials into `master-data/*.md` files. No schema enforcement.
-- **2. Context Compression (Tier 1 -> Tier 2):** AI Copilot reads `master-data/` and produces structured `content/` files following XYZ format and schema spec. Each `content/` file references its schema via HTML comments (e.g., `content/education/university.md:1-4`).
+- **1. Raw Input (Tier 1):** User writes free-form materials into `master-data/{category}/*.md` files. No schema enforcement. Six subdirectories mirror content categories.
+- **2. Context Compression (Tier 1 -> Tier 2):** AI Copilot reads `master-data/` and produces structured `content/*.md` files (flat, 7 files) following XYZ format and schema spec.
 - **3. Template Injection (Tier 2 -> Tier 3):** `content/` files are injected into LaTeX templates in `templates/`.
 - **4. PDF Compilation (Tier 3 -> Output):** LaTeX compiled via Overleaf or local toolchain to produce final PDF.
 

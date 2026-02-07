@@ -8,5 +8,3 @@ location: "Suzhou, China"
 links:
   - name: "GitHub"
     url: "https://github.com/kevinlasnh"
-  - name: "LinkedIn"
-    url: "TODO"

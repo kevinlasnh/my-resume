@@ -8,18 +8,17 @@ The my-resume project follows a three-tier data flow architecture (Raw -> Schema
 
 ## 2. Source of Truth
 
-- **Primary Code**: `README.md` - Project architecture and naming convention
-- **Directory Structure**: `README.md:9-26` - Three-tier directory layout
-- **Naming Convention**: `README.md:47-49` - Kebab-case enforcement
+- **Primary Code**: `CLAUDE.md` - Repository identity, directory structure, design principles, modification rules
+- **Directory Structure**: `CLAUDE.md:13-37` - Three-tier directory layout
+- **Naming Convention**: `CLAUDE.md:74` - Kebab-case enforcement
 - **Related Architecture**: `/llmdoc/architecture/three-tier-data-flow.md` - Full tier specification
 - **Related Architecture**: `/llmdoc/architecture/content-schema.md` - Schema layer conventions
 
 ## 3. Naming Conventions
 
-- **All files and directories**: Strict kebab-case (e.g., `education-master.md`, `mr-cooking.md`)
-- **Master data files**: `{category}-master.md` pattern (e.g., `projects-master.md`)
-- **Content files (basics/, education/)**: Descriptive kebab-case (e.g., `content/basics/profile.md`, `content/education/university.md`)
-- **Content files (projects/, experience/, publications/, awards/)**: Numbered prefix `{NN}-{name}.md` sorted by priority/recency (e.g., `01-autonomous-driving.md`, `02-golf-ball-vehicle.md`)
+- **All files and directories**: Strict kebab-case (e.g., `education-master.md`, `projects.md`)
+- **Master data files**: `{category}-master.md` inside `master-data/{category}/` subdirectory (e.g., `master-data/projects/projects-master.md`)
+- **Content files**: Flat in `content/` root, one file per category (e.g., `content/profile.md`, `content/education.md`, `content/projects.md`)
 - **LaTeX class**: `resume-commands.cls` -- single custom class file
 - **LaTeX main**: `resume.tex` -- single entry point
 - **LaTeX sections**: `templates/sections/{layer-name}.tex` -- named by content layer (e.g., `header.tex`, `education.tex`, `experience.tex`)
@@ -28,13 +27,20 @@ The my-resume project follows a three-tier data flow architecture (Raw -> Schema
 
 ```
 master-data/    # [Tier 1] Raw Data Lake
-content/        # [Tier 2] Schema Layer
-  basics/       #   profile.md, skills.md
-  education/    #   university.md, ...
-  projects/     #   per-project files
-  experience/   #   per-entry files
-  publications/ #   per-entry files
-  awards/       #   per-entry files
+  basics/       #   (empty, reserved)
+  education/    #   education-master.md
+  projects/     #   projects-master.md
+  experience/   #   experience-master.md
+  publications/ #   (empty, reserved)
+  awards/       #   (empty, reserved)
+content/        # [Tier 2] Schema Layer (flat, 7 files)
+  profile.md    #   Layer 1: Header
+  education.md  #   Layer 2: Education
+  skills.md     #   Layer 3: Technical Skills
+  projects.md   #   Layer 4: Selected Projects
+  experience.md #   Layer 5: Professional Experience
+  publications.md # Layer 6A: Publications
+  awards.md     #   Layer 6B: Awards
 templates/      # [Tier 3] View Layer (LaTeX)
 llmdoc/         # Documentation system
 ```
