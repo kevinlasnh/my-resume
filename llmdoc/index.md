@@ -1,6 +1,6 @@
 # my-resume Documentation Index
 
-> **Last Updated**: 2026-02-07 | **Version**: 2.1
+> **Last Updated**: 2026-02-07 | **Version**: 2.2
 > **Project**: Three-Tier Data Flow Resume System (Raw -> Schema -> LaTeX View)
 > **Architecture**: master-data/ -> content/ -> templates/ -> PDF
 

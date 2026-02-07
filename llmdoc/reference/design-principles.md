@@ -20,7 +20,7 @@ The project enforces five non-negotiable design principles: strict kebab-case na
 | **Kebab-Case** | All files and directories use kebab-case | All tiers |
 | **No Fluff** | No Summary section; maximize technical depth | Tier 2 (content/) |
 | **Evidence-Based** | Projects must have URL; publications must have link | Tier 2 (content/) |
-| **ATS-Optimized** | Skills explicitly grouped by category with keywords | Tier 2 (content/skills.md) |
+| **ATS-Optimized** | Skills explicitly grouped by category with keywords; incremental filling (add as you discover) | Tier 2 (content/skills.md) |
 | **Privacy-First** | No photos, no full addresses, no sensitive PII | All tiers |
 
 ## 4. Role Assignments

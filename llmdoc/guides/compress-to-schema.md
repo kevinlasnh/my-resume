@@ -9,9 +9,10 @@ A guide for AI Copilot to transform Tier 1 raw materials into Tier 2 structured 
 3. **Apply XYZ Format:** For experience, projects, and publications entries, compress each bullet point into Action-Context-Result format. Strip filler words and maximize technical specificity.
 
 4. **Enforce Design Principles:** Validate against `/llmdoc/reference/design-principles.md`:
-   - Every project must have a URL
+   - Every project must have a URL (N/A acceptable if truly unavailable)
    - Every publication must have a link
-   - Skills must be explicitly grouped by category for ATS
+   - Skills use incremental filling — add as you discover, no pressure for completeness
+   - Skills must follow Ecosystem Binding: `**Python** (PyTorch, ROS2)` format
    - No summary section; no fluff
 
 5. **Write to Content File:** Save the structured output to the appropriate `content/` file using kebab-case naming. Commit:

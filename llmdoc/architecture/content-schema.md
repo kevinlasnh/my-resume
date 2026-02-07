@@ -8,7 +8,7 @@
 ## 2. Core Components
 
 - `content/profile.md` (Profile Schema): Personal identity fields -- name, role, email, phone, location, links (GitHub mandatory, LinkedIn TBD).
-- `content/skills.md` (Skills Schema): Categorized skill groups with explicit ATS keyword grouping. Format: `* **Category:** **Skill** (Detail), Skill`.
+- `content/skills.md` (Skills Schema): Categorized skill groups with explicit ATS keyword grouping. Format: `* **Category:** **Skill** (Detail), Skill`. **Note:** Skills use incremental filling strategy — add as you discover, no pressure for completeness.
 - `content/education.md` (Education Schema): Structured entries with fields: institution, degree, start_date, end_date, gpa, courses.
 - `content/experience.md` (Experience Schema): All experience entries in single file with XYZ (Action-Context-Result) bullet format.
 - `content/projects.md` (Projects Schema): All project entries in single file requiring project URL. XYZ bullet format.
