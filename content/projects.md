@@ -8,7 +8,7 @@ priority: 3
 type: "Research Group"
 role: "Lead Algorithm Engineer"
 period: "Jun 2025 -- Present"
-url: "TODO"
+url: "https://github.com/You-guesssssss"
 tech_stack: ["ROS2", "C++", "Nav2", "FAST-LIO2", "GTSAM"]
 
 - Designed and implemented a four-layer system architecture (Driver, Perception, Navigation, Global Planning) for an autonomous vehicle using **ROS2** and **C++**
@@ -23,7 +23,7 @@ priority: 2
 type: "Industrial Practice"
 role: "Lead Algorithm & Hardware Engineer"
 period: "Feb 2025 -- Jun 2025"
-url: "TODO"
+url: "https://github.com/MichealgodJordan/Intelligent-Indoor-Golf-Automatic-Collection-Cart"
 tech_stack: ["YOLOv5", "Python", "Embedded Systems"]
 
 - Led overall architecture design and system integration of mechanical structure, electrical circuits, and algorithms for an autonomous collection vehicle
@@ -38,7 +38,7 @@ priority: 1
 type: "Summer Research"
 role: "Project Lead"
 period: "Jun 2024 -- Sep 2024"
-url: "TODO"
+url: "N/A"
 tech_stack: ["MEMS", "Sensor Design"]
 
 - Led the design and fabrication of micro triboelectric vibration sensors for low-frequency resonance detection

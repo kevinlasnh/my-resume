@@ -87,6 +87,19 @@ my-resume/
 - **架构规范:** `G:\我的云端硬盘\SecondBrain\work\resume\resume-architecture-spec.md`
 - **工作流规范:** `G:\我的云端硬盘\SecondBrain\work\resume\workflow.md`
 
+### Spec 优先规则 ⚠️
+
+**AI Copilot 修改简历内容时，必须优先遵循 Spec 定义：**
+
+1. **修改 `content/` 前:** 必须先读取 Spec 的 Layer Specifications (Section 3)，确认字段约束和格式要求
+2. **当 CLAUDE.md 与 Spec 冲突时:** 以 Spec 为准
+3. **Spec 关键约束摘要:**
+   - **Layer 3 Skills:** Ecosystem Binding (`**Python** (PyTorch, ROS2)`), Bold=Proficient, 禁止 fluff tools
+   - **Layer 4 Projects:** URL MANDATORY, 3 bullets XYZ 格式, tech_stack 数组
+   - **Layer 5 Experience:** company_desc MANDATORY (非 Big Tech), bullet 必须提及具体工具
+   - **Layer 6A Publications:** status MANDATORY, Submitted 必须有 arXiv 链接
+   - **Layer 6B Awards:** 仅国家级/国际级/Hackathon，校级奖学金归入 Education
+
 ---
 
 ## Role Assignments
@@ -128,6 +141,15 @@ my-resume/
 3. 创建或更新 `progress.md` — 初始化会话日志
 
 规划完成并经用户确认后，才可开始执行。
+
+### Skills 撰写规则 ⚠️
+
+**Skills 是增量填充的，不是一次性完成的：**
+
+1. **随时添加:** 发现自己会用某个工具/技术时，立即添加到 `content/skills.md`
+2. **不要追求完整:** 不需要一次性列出所有技能，留白比遗漏强
+3. **定期回顾:** 每次做项目/实习/研究后，回头看 Skills，补充新掌握的技能
+4. **Spec 约束始终有效:** 添加时仍需遵循 Ecosystem Binding、Bold 区分、禁止 fluff rules
 
 ---
 
