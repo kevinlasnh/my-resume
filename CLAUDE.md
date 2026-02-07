@@ -28,9 +28,7 @@ my-resume/
 │   ├── publications.md    # Layer 6A: Publications
 │   └── awards.md          # Layer 6B: Awards
 ├── templates/             # [Tier 3] View Layer — LaTeX (Jake's Resume + Roboto)
-│   ├── resume-commands.cls
-│   ├── resume.tex
-│   └── sections/          # 7 个 section 模板 (header/education/skills/projects/experience/publications/awards)
+│   └── resume.tex         # 单文件: 命令定义 + 7 个 section 内联
 ├── llmdoc/                # 项目文档系统
 ├── CLAUDE.md              # 本文件
 └── .gitignore
