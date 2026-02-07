@@ -19,9 +19,7 @@ The my-resume project follows a three-tier data flow architecture (Raw -> Schema
 - **All files and directories**: Strict kebab-case (e.g., `education-master.md`, `projects.md`)
 - **Master data files**: `{category}-master.md` inside `master-data/{category}/` subdirectory (e.g., `master-data/projects/projects-master.md`)
 - **Content files**: Flat in `content/` root, one file per category (e.g., `content/profile.md`, `content/education.md`, `content/projects.md`)
-- **LaTeX class**: `resume-commands.cls` -- single custom class file
-- **LaTeX main**: `resume.tex` -- single entry point
-- **LaTeX sections**: `templates/sections/{layer-name}.tex` -- named by content layer (e.g., `header.tex`, `education.tex`, `experience.tex`)
+- **LaTeX template**: `resume.tex` -- single file containing all commands and sections inline
 
 ## 4. Directory Structure
 

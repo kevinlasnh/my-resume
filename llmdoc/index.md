@@ -1,6 +1,6 @@
 # my-resume Documentation Index
 
-> **Last Updated**: 2026-02-07 | **Version**: 2.2
+> **Last Updated**: 2026-02-07 | **Version**: 2.3
 > **Project**: Three-Tier Data Flow Resume System (Raw -> Schema -> LaTeX View)
 > **Architecture**: master-data/ -> content/ -> templates/ -> PDF
 
@@ -81,16 +81,7 @@ my-resume/
 │   ├── publications.md   #   Layer 6A: all publication entries (merged)
 │   └── awards.md         #   Layer 6B: all award entries (merged)
 ├── templates/            # [Tier 3] View Layer - LaTeX (Jake's Resume + Roboto)
-│   ├── resume-commands.cls  # Custom class: heading commands, ATS config, Roboto font
-│   ├── resume.tex           # Main file: modular \input{sections/*} structure
-│   └── sections/            # 7 section templates (Layer 1-6B)
-│       ├── header.tex       #   Layer 1: name, contact, links
-│       ├── education.tex    #   Layer 2: \resumeSubheading
-│       ├── skills.tex       #   Layer 3: categorized keywords
-│       ├── projects.tex     #   Layer 4: \resumeProjectHeading
-│       ├── experience.tex   #   Layer 5: \resumeExperienceHeading
-│       ├── publications.tex #   Layer 6A: \resumePublication
-│       └── awards.tex       #   Layer 6B: \resumeAward
+│   └── resume.tex           # Single-file template: all commands + 7 sections inline
 ├── llmdoc/               # This documentation system
 │   ├── index.md          # Documentation index (this file)
 │   ├── overview/         # High-level project context (2 documents)
